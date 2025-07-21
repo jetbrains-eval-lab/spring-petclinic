@@ -73,8 +73,7 @@ class OwnerControllerTests {
 		george.setId(TEST_OWNER_ID);
 		george.setFirstName("George");
 		george.setLastName("Franklin");
-		george.setAddress("110 W. Liberty St.");
-		george.setCity("Madison");
+		george.setAddress(new Address("110 W. Liberty St.", "Madison"));
 		george.setTelephone("6085551023");
 		Pet max = new Pet();
 		PetType dog = new PetType();
@@ -236,8 +235,7 @@ class OwnerControllerTests {
 		owner.setId(2);
 		owner.setFirstName("John");
 		owner.setLastName("Doe");
-		owner.setAddress("Center Street");
-		owner.setCity("New York");
+		owner.setAddress(new Address("Center Street", "New York"));
 		owner.setTelephone("0123456789");
 
 		when(owners.findById(pathOwnerId)).thenReturn(Optional.of(owner));
