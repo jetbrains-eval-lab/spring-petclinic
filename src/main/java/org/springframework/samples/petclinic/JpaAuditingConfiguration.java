@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.system;
+package org.springframework.samples.petclinic;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.Optional;
 
@@ -26,7 +27,8 @@ import java.util.Optional;
  * automatic tracking of entity creation and modification timestamps and users.
  */
 @Configuration
-public class AuditingConfiguration {
+@EnableJpaAuditing(auditorAwareRef = "auditorProvider")
+public class JpaAuditingConfiguration {
 
 	/**
 	 * Provides the current auditor (user) for JPA auditing. In a real application, this
