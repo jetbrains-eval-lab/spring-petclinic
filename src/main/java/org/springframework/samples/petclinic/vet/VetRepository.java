@@ -57,8 +57,8 @@ public interface VetRepository extends Repository<Vet, Integer> {
 	Page<Vet> findAll(Pageable pageable) throws DataAccessException;
 
 	@Query(nativeQuery = true,
-		value = "select s.name from specialties s join vet_specialties vs on vs.specialty_id = s.id and vs.vet_id = ?1",
-		countQuery = "select count(vs.specialty_id) from vet_specialties vs where vs.vet_id = ?1")
+			value = "select s.name from specialties s join vet_specialties vs on vs.specialty_id = s.id and vs.vet_id = ?1",
+			countQuery = "select count(vs.specialty_id) from vet_specialties vs where vs.vet_id = ?1")
 	Page<String> findAllSpecialtyNames(int vetId, Pageable pageable) throws DataAccessException;
 
 }

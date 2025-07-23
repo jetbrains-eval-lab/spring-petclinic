@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DataJpaTest
 public class VetRepositoryTests {
 
-
 	@Autowired
 	private VetRepository vetRepository;
 
