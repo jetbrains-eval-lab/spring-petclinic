@@ -32,11 +32,8 @@ public class MedicationRepositoryTest {
 	}
 
 	@ParameterizedTest
-	@ValueSource(strings= {
-		"b5f3db68-65b6-4dc6-bfd3-f5925f3f5eff",
-		"427f69d5-7089-4cf0-b1f9-74d41811388a",
-		"40b9a15f-8e61-4d13-be1c-d06fa08ea8cb"
-	})
+	@ValueSource(strings = { "b5f3db68-65b6-4dc6-bfd3-f5925f3f5eff", "427f69d5-7089-4cf0-b1f9-74d41811388a",
+			"40b9a15f-8e61-4d13-be1c-d06fa08ea8cb" })
 	@Transactional(Transactional.TxType.NEVER)
 	void testSeveralUuidsGenerated(String uuidString) {
 		UUID uuid = UUID.fromString(uuidString);
@@ -53,4 +50,5 @@ public class MedicationRepositoryTest {
 			Mockito.framework().clearInlineMocks();
 		}
 	}
+
 }
