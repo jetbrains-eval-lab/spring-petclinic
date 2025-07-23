@@ -19,6 +19,7 @@ public class MedicalConditionRepositoryTest {
 
 	@Autowired
 	private MedicalConditionRepository medicalConditionRepository;
+
 	@Autowired
 	private OwnerRepository ownerRepository;
 
@@ -29,7 +30,8 @@ public class MedicalConditionRepositoryTest {
 		medicalCondition.setNames(Set.of("A1", "B2"));
 
 		medicalConditionRepository.save(medicalCondition);
-		Optional<MedicalCondition> found = medicalConditionRepository.findById(medicalCondition.getMedicalConditionId());
+		Optional<MedicalCondition> found = medicalConditionRepository
+			.findById(medicalCondition.getMedicalConditionId());
 		assertTrue(found.isPresent());
 		assertEquals(medicalCondition.getNames(), found.get().getNames());
 	}

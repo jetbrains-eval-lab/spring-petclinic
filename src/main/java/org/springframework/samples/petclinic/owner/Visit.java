@@ -42,10 +42,8 @@ public class Visit extends BaseEntity {
 	private String description;
 
 	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name = "medical_condition_code", referencedColumnName = "condition_code"),
-		@JoinColumn(name = "medical_condition_locale", referencedColumnName = "locale")
-	})
+	@JoinColumns({ @JoinColumn(name = "medical_condition_code", referencedColumnName = "condition_code"),
+			@JoinColumn(name = "medical_condition_locale", referencedColumnName = "locale") })
 	private MedicalCondition medicalCondition;
 
 	public MedicalCondition getMedicalCondition() {

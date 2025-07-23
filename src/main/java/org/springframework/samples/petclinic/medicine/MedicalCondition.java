@@ -14,10 +14,9 @@ public class MedicalCondition {
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@Column(name = "name")
-	@CollectionTable(name = "medical_condition_names", joinColumns = {
-		@JoinColumn(name = "medical_condition_code", referencedColumnName = "condition_code"),
-		@JoinColumn(name = "medical_condition_locale", referencedColumnName = "locale")
-	})
+	@CollectionTable(name = "medical_condition_names",
+			joinColumns = { @JoinColumn(name = "medical_condition_code", referencedColumnName = "condition_code"),
+					@JoinColumn(name = "medical_condition_locale", referencedColumnName = "locale") })
 	private Set<String> names = new LinkedHashSet<>();
 
 	public Set<String> getNames() {
@@ -35,7 +34,5 @@ public class MedicalCondition {
 	public void setMedicalConditionId(MedicalConditionId medicalConditionId) {
 		this.medicalConditionId = medicalConditionId;
 	}
-
-
 
 }

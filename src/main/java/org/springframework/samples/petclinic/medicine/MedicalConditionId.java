@@ -32,7 +32,8 @@ public class MedicalConditionId {
 
 	@Override
 	public boolean equals(Object o) {
-		if (o == null || getClass() != o.getClass()) return false;
+		if (o == null || getClass() != o.getClass())
+			return false;
 		MedicalConditionId that = (MedicalConditionId) o;
 		return Objects.equals(code, that.code) && Objects.equals(locale, that.locale);
 	}
@@ -41,4 +42,5 @@ public class MedicalConditionId {
 	public int hashCode() {
 		return Objects.hash(code, locale);
 	}
+
 }
