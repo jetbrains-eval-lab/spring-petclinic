@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.owner;
 
+import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -59,6 +60,14 @@ public class PetValidator implements Validator {
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return Pet.class.isAssignableFrom(clazz);
+	}
+
+	public String encode(String value) {
+		return Base64Utils.encodeToString("hola".getBytes());
+	}
+
+	public String decode(String value) {
+		return new String(Base64Utils.decodeFromString(value));
 	}
 
 }
